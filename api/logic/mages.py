@@ -4,7 +4,6 @@ import logging
 from api.database.mongo.collections.mage import Mage
 from api.database.mongo.mongo_connection import MongoConnection
 
-
 log = logging.getLogger(__name__)
 
 class MageManager:
@@ -22,7 +21,6 @@ class MageManager:
     def get_mage(self, mage_id):
         mage = self.MageCollection.find_by_id(mage_id)
         return mage
-
 
 def create_mage():
     pass

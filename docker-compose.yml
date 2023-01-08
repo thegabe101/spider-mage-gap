@@ -13,7 +13,7 @@ networks:
           gateway: 169.254.170.1
 services:
   mongo:
-    image: mongo:3.6.8
+    image: mongo:latest
     container_name: mongo
     hostname: mongo
     environment:
@@ -23,9 +23,9 @@ services:
       - mongo_network
     ports:
       - 27017:27017
-    volumes:
-      - mongo-data:/data/db
-      - mongo-configdb:/data/configdb
+#    volumes:
+#      - mongo-data:/data/db
+#      - mongo-configdb:/data/configdb
 
 
 

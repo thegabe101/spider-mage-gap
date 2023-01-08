@@ -1,0 +1,7 @@
+flask
+pymongo
+pytest
+boto3
+flask-cors
+
+python-dotenv

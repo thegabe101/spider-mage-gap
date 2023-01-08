@@ -1,16 +1,19 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateMageFirstName, updateMageLastName } from "../redux/actions";
+import API from "../API";
 
 const Form = () => {
+	const tempMage = API.getMages();
+
 	const dispatch = useDispatch();
 	const nameReducer = useSelector((state) => state.nameReducer);
 	const { mageFirstName, mageLastName, message } = nameReducer;
 	const handleFirstName = () => {
-		dispatch(updateMageFirstName("Hubius"));
+		dispatch(updateMageFirstName(tempMage));
 	};
 	const handleLastName = () => {
-		dispatch(updateMageLastName("Dangus"));
+		dispatch(updateMageLastName(tempMage));
 	};
 	const handleReset = () => {
 		dispatch({ type: "", action: {} });

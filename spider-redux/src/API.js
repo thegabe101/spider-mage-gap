@@ -14,14 +14,14 @@
 // 	// },
 
 // 	async getTitle() {
-// 		try {
-// 			const response = await axios.get(`/api2` + URL_PREFIX)
-// 			console.log(response.data)
-// 			return response.data;
-// 		} catch (err) {
-// 			console.log(err);
-// 		}
-// 	}
+	// 	try {
+	// 		const response = await axios.get(`/api2` + URL_PREFIX)
+	// 		console.log(response.data)
+	// 		return response.data;
+	// 	} catch (err) {
+	// 		console.log(err);
+	// 	}
+	// }
 // }
 
 // // async getTitle() {

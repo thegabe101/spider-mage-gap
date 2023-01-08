@@ -34,10 +34,10 @@ const NavBar = (props) => {
 							to={"/mage"}
 						/>
 						<Tab
-							label="Battles"
+							label="Posts"
 							index={1}
 							component={Link}
-							to={"/battle"}
+							to={"/posts"}
 						/>
 					</Tabs>
 				</AppBar>

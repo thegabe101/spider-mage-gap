@@ -1,20 +1,13 @@
-const initialMages = [
-    {
-        name: 'Jui',
-        power: 32
-    },
-    {
-        name: 'Deab',
-        cost: 36
-    }
-]
+
+
+import MageList from '../features/mages/MageList'
 
 export const MageScreen = () => {
-    let marginTop = 50;
-
+    let marginTop = 500;
     return (
         <div style={{background: 'blue', marginTop: marginTop}}>
         
+            <MageList />
             MageScreen
     </div>
     )

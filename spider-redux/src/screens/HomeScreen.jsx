@@ -1,10 +1,3 @@
-// export const HomeScreen() {
-//     return (
-//       <div className="HomeScreen">
-//           df
-//       </div>
-//     );
-//   }
   
   export const HomeScreen = () => {
     let marginTop = 50;

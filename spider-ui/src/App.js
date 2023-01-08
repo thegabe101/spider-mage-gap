@@ -8,11 +8,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <ButtonAppBar></ButtonAppBar>
       <BrowserRouter></BrowserRouter>
     </div>
-    // <div><h1>hello</h1></div>
   );
 }
 

@@ -5,6 +5,12 @@ import Tab from "@mui/material/Tab";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import "../styles/navbar.css";
+// import fantback1 from "../assets/fantback1";
+// import fantback2 from "../assets/fantback2";
+// import fantback3 from "../assets/fantback3";
+// import fantback4 from "../assets/fantback4";
+// import fantback5 from "../assets/fantback5";
+
 const NavBar = (props) => {
 	const [value, setValue] = useState(0);
 
@@ -15,12 +21,7 @@ const NavBar = (props) => {
 	return (
 		<React.Fragment>
 			<Box sx={{ flexGrow: 1 }}>
-				<AppBar
-					className="navContainer"
-					// position="fixed"
-					// color="transparent"
-					// style={{ position: "fixed", top: 0 }}
-				>
+				<AppBar className="navContainer">
 					<Tabs
 						value={value}
 						onChange={handleChange}

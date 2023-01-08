@@ -10,6 +10,7 @@ import Layout from "./components/Layout";
 import Footer from "./components/Foot";
 import NavBar from "./components/navbar";
 import { Form } from "./components";
+import "./styles/body.css";
 
 const Router = () => {
 	return (

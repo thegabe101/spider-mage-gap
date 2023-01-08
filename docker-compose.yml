@@ -61,7 +61,9 @@ services:
       AWS_DEFAULT_REGION: "us-west-2"
       AWS_CONTAINER_CREDENTIALS_RELATIVE_URI: "/creds"
     volumes:
+      - "./seed_data.py:/usr/src/app/seed_data.py"
       - "./api:/usr/src/app/api"
+      - "./contrib:/usr/src/app/contrib"
       - app-volume:/usr/src/app/appdata
     links:
       - mongo

@@ -73,11 +73,11 @@ services:
       - mongo
   ui:
     build:
-      context: 04_lesson
+      context: spider-redux
     ports:
       - 3000:3000
     volumes:
-      - "./04_lesson/src:/app/src"
+      - "./spider-redux/src:/app/src"
     environment:
       CHOKIDAR_USEPOLLING: "true"
     networks:

@@ -4,6 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
+import "../styles/navbar.css";
 const NavBar = (props) => {
 	const [value, setValue] = useState(0);
 
@@ -15,9 +16,10 @@ const NavBar = (props) => {
 		<React.Fragment>
 			<Box sx={{ flexGrow: 1 }}>
 				<AppBar
-					position="fixed"
-					color="transparent"
-					style={{ position: "fixed", top: 0 }}
+					className="navContainer"
+					// position="fixed"
+					// color="transparent"
+					// style={{ position: "fixed", top: 0 }}
 				>
 					<Tabs
 						value={value}
@@ -38,6 +40,12 @@ const NavBar = (props) => {
 							index={1}
 							component={Link}
 							to={"/battle"}
+						/>
+						<Tab
+							label="Posts"
+							index={1}
+							component={Link}
+							to={"/posts"}
 						/>
 					</Tabs>
 				</AppBar>

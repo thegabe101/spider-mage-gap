@@ -1,0 +1,2 @@
+export const SET_MAGE_FIRST_NAME = "SET_MAGE_FIRST_NAME";
+export const SET_MAGE_LAST_NAME = "SET_MAGE_LAST_NAME";

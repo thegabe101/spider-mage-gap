@@ -7,13 +7,9 @@ import AddPostForm from "./features/posts/AddPostForm";
 import SinglePostPage from "./features/posts/SinglePostPage";
 import EditPostForm from "./features/posts/EditPostForm";
 import Layout from "./components/Layout";
-
-
 import Footer from "./components/Foot";
-
-
-
 import NavBar from "./components/navbar";
+import { Form } from "./components";
 
 const Router = () => {
 	return (
@@ -21,15 +17,16 @@ const Router = () => {
 			<NavBar />
 			<Routes>
 				<Route path="/" element={<HomeScreen />} />
-        <Route path ="/posts" element={<PostsList />} />
-        <Route path="post">
-          <Route index element={<AddPostForm />} />
-          <Route path=":postId" element={<SinglePostPage />} />
-          <Route path="edit/:postId" element={<EditPostForm />} />
-        </Route>
-        <Route path="/mage" element={<MageScreen />} />
+				<Route path="/posts" element={<PostsList />} />
+				<Route path="post">
+					<Route index element={<AddPostForm />} />
+					<Route path=":postId" element={<SinglePostPage />} />
+					<Route path="edit/:postId" element={<EditPostForm />} />
+				</Route>
+				<Route path="/mage" element={<MageScreen />} />
 				<Route path="/battle" element={<BattleScreen />} />
 			</Routes>
+			<Form />
 			<Footer />
 		</>
 	);

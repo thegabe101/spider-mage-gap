@@ -1,9 +1,10 @@
-import React from 'react';
-import './App.css';
-// import NavBar from './components/home';
-import Spider from './components/header';
-import { Filter } from './components/Filter'
-import { Products } from './components/Products'
+// import PostsList from "./features/posts/PostsList";
+// import AddPostForm from "./features/posts/AddPostForm";
+// import SinglePostPage from "./features/posts/SinglePostPage";
+// import EditPostForm from "./features/posts/EditPostForm";
+// import Layout from "./components/Layout";
+// import { Routes, Route } from 'react-router-dom';
+
 
 import { BrowserRouter} from 'react-router-dom'
 import Router from './Router'
@@ -16,5 +17,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;

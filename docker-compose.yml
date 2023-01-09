@@ -23,12 +23,6 @@ services:
       - mongo_network
     ports:
       - 27017:27017
-#    volumes:
-#      - mongo-data:/data/db
-#      - mongo-configdb:/data/configdb
-
-
-
     # This container vends credentials to your containers
   ecs-local-endpoints:
         # The Amazon ECS Local Container Endpoints Docker Image
@@ -67,7 +61,9 @@ services:
       AWS_DEFAULT_REGION: "us-west-2"
       AWS_CONTAINER_CREDENTIALS_RELATIVE_URI: "/creds"
     volumes:
+      - "./seed_data.py:/usr/src/app/seed_data.py"
       - "./api:/usr/src/app/api"
+      - "./contrib:/usr/src/app/contrib"
       - app-volume:/usr/src/app/appdata
     links:
       - mongo

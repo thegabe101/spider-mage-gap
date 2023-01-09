@@ -49,6 +49,7 @@ services:
   api:
     build: .
     image: api_image
+    container_name: api
     depends_on:
       - ecs-local-endpoints
     ports:

@@ -10,6 +10,12 @@ export const fetchMages = createAsyncThunk('mages/fetchMages', async () => {
     return response.data
 })
 
+export const addNewMage = createAsyncThunk('mages/addNewMage', async (mage) => {
+    const response = await axios.post(MAGE_URL, mage)
+    return response.data
+})
+
+
 const magesSlice = createSlice({
     name: 'mages',
     initialState,

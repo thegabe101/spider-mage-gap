@@ -3,6 +3,8 @@
 
 import  MageList  from "../features/mages/MageList"
 
+import  AddMageForm  from "../features/mages/AddMageForm"
+
 
 export const MageScreen = () => {
     let marginTop = 200;
@@ -10,6 +12,7 @@ export const MageScreen = () => {
     <div style={{background: 'red', marginTop: marginTop}}>
             MageScreen
 			<MageList />
+			<AddMageForm />
     </div>
 	)
 };

@@ -5,14 +5,6 @@ import Tab from "@mui/material/Tab";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import "../styles/navbar.css";
-// import { createTheme } from "@mui/material/styles";
-// import { light } from "@mui/material/styles/createPalette";
-
-// const theme = createTheme({
-// 	palette: {
-// 		primary: light,
-// 	},
-// });
 
 const NavBar = (props) => {
 	const [value, setValue] = useState(0);
@@ -44,12 +36,6 @@ const NavBar = (props) => {
 							index={1}
 							component={Link}
 							to={"/battle"}
-						/>
-						<Tab
-							label="Posts"
-							index={1}
-							component={Link}
-							to={"/posts"}
 						/>
 					</Tabs>
 				</AppBar>

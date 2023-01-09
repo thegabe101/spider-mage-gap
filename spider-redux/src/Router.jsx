@@ -14,6 +14,7 @@ const Router = () => {
 			<Routes>
 				<Route path="/" element={<HomeScreen />} />	
 				<Route path="/mage" element={<MageScreen />} />
+				<Route path="/mage" element={<MageScreen />} />
 				<Route path="/battle" element={<BattleScreen />} />
 			</Routes>
 			<Footer />

@@ -1,21 +1,15 @@
-import { Form } from "../components";
-import "../styles/mageSheetStyle.css";
+// import { Form } from "../components";
+// import "../styles/mageSheetStyle.css";
 
-const initialMages = [
-	{
-		name: "Jui",
-		power: 32,
-	},
-	{
-		name: "Deab",
-		cost: 36,
-	},
-];
+import  MageList  from "../features/mages/MageList"
+
 
 export const MageScreen = () => {
-	return (
-		<div className="mageSheetStyle">
-			<Form />
-		</div>
-	);
+    let marginTop = 200;
+    return (
+    <div style={{background: 'red', marginTop: marginTop}}>
+            MageScreen
+			<MageList />
+    </div>
+	)
 };

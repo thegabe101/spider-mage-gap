@@ -47,7 +47,7 @@ services:
     # You can test multiple containers at a time, simply duplicate this section
     # and customize it for each container, and give it a unique IP in 'credentials_network'.
   api:
-#    build: .
+    build: .
     image: api_image
     depends_on:
       - ecs-local-endpoints

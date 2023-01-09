@@ -23,7 +23,6 @@ services:
       - mongo_network
     ports:
       - 27017:27017
-    # This container vends credentials to your containers
   ecs-local-endpoints:
         # The Amazon ECS Local Container Endpoints Docker Image
     image: amazon/amazon-ecs-local-container-endpoints
@@ -42,13 +41,15 @@ services:
       credentials_network:
           # This special IP address is recognized by the AWS SDKs and AWS CLI
         ipv4_address: "169.254.170.2"
+#
+#    # Here we reference the application container that we are testing
+#    # You can test multiple containers at a time, simply duplicate this section
+#    # and customize it for each container, and give it a unique IP in 'credentials_network'.
+#
 
-    # Here we reference the application container that we are testing
-    # You can test multiple containers at a time, simply duplicate this section
-    # and customize it for each container, and give it a unique IP in 'credentials_network'.
   api:
-    build: .
-    image: api_image
+    build: services/battle_mage_api
+
     container_name: api
     depends_on:
       - ecs-local-endpoints
@@ -62,23 +63,45 @@ services:
       AWS_DEFAULT_REGION: "us-west-2"
       AWS_CONTAINER_CREDENTIALS_RELATIVE_URI: "/creds"
     volumes:
-      - "./seed_data.py:/usr/src/app/seed_data.py"
-      - "./api:/usr/src/app/api"
-      - "./contrib:/usr/src/app/contrib"
+      - "./services/battle_mage_api/seed_data.py:/usr/src/app/seed_data.py"
+      - "./services/battle_mage_api/api:/usr/src/app/api"
+      - "./services/battle_mage_api/contrib:/usr/src/app/contrib"
       - app-volume:/usr/src/app/appdata
-    links:
-      - mongo
-  ui:
-    build:
-      context: spider-redux
+#    links:
+#      - mongo
+##
+  socket_api:
+    build: services/socket_api
+    container_name: socket_api
     ports:
-      - 3000:3000
-    volumes:
-      - "./spider-redux/src:/app/src"
-    environment:
-      CHOKIDAR_USEPOLLING: "true"
+      - 8081:8080
     networks:
       mongo_network:
+    environment:
+      AWS_DEFAULT_REGION: "us-west-2"
+      AWS_CONTAINER_CREDENTIALS_RELATIVE_URI: "/creds"
+    volumes:
+      - "./services/socket_api/socket_api:/usr/src/app/socket_api"
+      - "./services/contrib:/usr/src/app/contrib"
+#    links:
+#      - mongo
+
+
+#  ui:
+#    build:
+#      context: spider-redux
+#    image: battle_mage_ui
+#    ports:
+#      - 3000:3000
+#    volumes:
+#      - "./spider-redux/src:/app/src"
+#    environment:
+#      CHOKIDAR_USEPOLLING: "true"
+#    networks:
+#      mongo_network:
+
+
+
 volumes:
   mongo-data:
   mongo-configdb:

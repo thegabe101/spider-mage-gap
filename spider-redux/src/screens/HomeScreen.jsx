@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
-import Hero from "../styles/Hero";
+import map_pic from "../assets/Spider.png";
+
 
 export const HomeScreen = () => {
-	// let marginTop = 50;
+	let marginTop = 200;
 	return (
-		<Fragment>
-			<Hero />
-		</Fragment>
+		<div>
+			<img className="map_picHeader" src={map_pic}></img>
+		</div>
 	);
 };

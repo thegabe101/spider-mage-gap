@@ -4,6 +4,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InfoIcon from "@mui/icons-material/Info";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
+import "../styles/footer.css";
 
 const Footer = (props) => {
 	const [value, setValue] = useState(0);
@@ -14,6 +15,7 @@ const Footer = (props) => {
 
 	return (
 		<BottomNavigation
+			className="footerStyle"
 			showLabels
 			value={value}
 			onChange={(event, newValue) => {

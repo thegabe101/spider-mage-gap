@@ -27,7 +27,6 @@ const Router = () => {
 				<Route path="/mage" element={<MageScreen />} />
 				<Route path="/battle" element={<BattleScreen />} />
 			</Routes>
-			<Form />
 			<Footer />
 		</>
 	);

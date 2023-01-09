@@ -1,23 +1,21 @@
+import { Form } from "../components";
+import "../styles/mageSheetStyle.css";
+
 const initialMages = [
-    {
-        name: 'Jui',
-        power: 32
-    },
-    {
-        name: 'Deab',
-        cost: 36
-    }
-]
+	{
+		name: "Jui",
+		power: 32,
+	},
+	{
+		name: "Deab",
+		cost: 36,
+	},
+];
 
 export const MageScreen = () => {
-    let marginTop = 50;
-
-    return (
-        <div style={{background: 'blue', marginTop: marginTop}}>
-        
-            MageScreen
-    </div>
-    )
-}
-
-
+	return (
+		<div className="mageSheetStyle">
+			<Form />
+		</div>
+	);
+};

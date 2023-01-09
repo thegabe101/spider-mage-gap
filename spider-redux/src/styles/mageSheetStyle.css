@@ -1,0 +1,8 @@
+.mageSheetStyle {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    padding: 150px;
+}

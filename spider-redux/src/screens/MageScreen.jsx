@@ -4,7 +4,7 @@
 import  MageList  from "../features/mages/MageList"
 
 import  AddMageForm  from "../features/mages/AddMageForm"
-
+import BasicTable from '../components/table'
 
 export const MageScreen = () => {
     let marginTop = 200;
@@ -13,6 +13,7 @@ export const MageScreen = () => {
             MageScreen
 			<MageList />
 			<AddMageForm />
+			{/* <BasicTable /> */}
     </div>
 	)
 };

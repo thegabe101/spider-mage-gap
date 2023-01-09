@@ -1,10 +1,10 @@
 from flask import Blueprint, request, jsonify, current_app
 import logging
-from api.logic.mages import MageManager
+from api.logic.manager import Manager
 api = Blueprint("mages_api", __name__)
 log = logging.getLogger()
 
-mage_manager = MageManager()
+mage_manager = Manager()
 
 
 @api.route('/mages', methods=['POST'])
@@ -21,6 +21,18 @@ def get_mages():
     for mage in fetched_mages:
         mage['key'] = mage['_id']
     return jsonify(fetched_mages)
+
+
+@api.route('/warriors', methods=['GET'])
+def get_warriors():
+    fetched_warriors = mage_manager.ge
+    for warrior in fetched_warriors:
+        warrior['key'] = warrior['_id']
+        return jsonify()
+
+
+get_warriors
+
 
 @api.route('/mages/<mage_id>', methods=['GET'])
 def get_mage(mage_id):

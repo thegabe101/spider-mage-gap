@@ -1,12 +1,11 @@
 .footerStyle {
-    font-weight: bold;
     justify-content: center;
     align-items: center;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgb(7, 6, 6);
+    height: fit-content;
     color: white;
     text-align: center;
 }

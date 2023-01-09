@@ -17,7 +17,9 @@ def create_mage():
 @api.route('/mages', methods=['GET'])
 def get_mages():
     fetched_mages = mage_manager.get_mages()
-    return jsonify(fetched_mages)
+    # commented out temporarily to try fetching a string from axios roll mage call
+    # return jsonify(fetched_mages)
+    return 'dakobed dangus'
 
 @api.route('/mages/<mage_id>', methods=['GET'])
 def get_mage(mage_id):

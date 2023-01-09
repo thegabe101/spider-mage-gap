@@ -11,7 +11,7 @@ const MageList = () => {
             dispatch(fetchMages())
         }
     }, [])
-    let content = [{'key':"df", 'name':'a'}];
+    let content = [];
     if (mages.length != 0) {
         content =mages
         console.log(content)

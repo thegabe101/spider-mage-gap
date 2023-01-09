@@ -1,27 +1,27 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { updateMageFirstName, updateMageLastName } from "../redux/actions";
-// import API from "../API";
+// import { useDispatch, useSelector } from "react-redux";
+// import { updateMageFirstName, updateMageLastName } from "../redux/actions";
+// // import API from "../API";
 
 const Form = () => {
 	//const tempMage = API.getMages();
 
-	const dispatch = useDispatch();
-	const nameReducer = useSelector((state) => state.nameReducer);
-	const { mageFirstName, mageLastName, message } = nameReducer;
-	const handleFirstName = () => {
-		dispatch(updateMageFirstName("tempMage"));
-	};
-	const handleLastName = () => {
-		dispatch(updateMageLastName("tempMageDako"));
-	};
-	const handleReset = () => {
-		dispatch({ type: "", action: {} });
-	};
+	// const dispatch = useDispatch();
+	// const nameReducer = useSelector((state) => state.nameReducer);
+	// const { mageFirstName, mageLastName, message } = nameReducer;
+	// const handleFirstName = () => {
+	// 	dispatch(updateMageFirstName("tempMage"));
+	// };
+	// const handleLastName = () => {
+	// 	dispatch(updateMageLastName("tempMageDako"));
+	// };
+	// const handleReset = () => {
+	// 	dispatch({ type: "", action: {} });
+	// };
 	return (
 		<React.Fragment>
 			<div className="container">
-				<br />
+				{/* <br />
 				<br />
 				<label>{mageFirstName}</label>
 				<button
@@ -57,7 +57,7 @@ const Form = () => {
 					onClick={handleReset}
 				>
 					Reset
-				</button>
+				</button> */}
 			</div>
 		</React.Fragment>
 	);

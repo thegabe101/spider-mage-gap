@@ -11,6 +11,12 @@ import { Typography } from "@mui/material";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import dwarfmageplaceholder from "../../assets/dwarfmageplaceholder.jpg";
 
+import DataTable from "react-data-table-component";
+import Paper from "@mui/material/Paper";
+import Checkbox from "@mui/material/Checkbox";
+import SortIcon from "@mui/icons-material/ArrowDownward";
+
+
 const MageList = () => {
 	const dispatch = useDispatch();
 	const mages = useSelector(selectAllMages);
@@ -62,3 +68,4 @@ const MageList = () => {
 };
 
 export default MageList;
+

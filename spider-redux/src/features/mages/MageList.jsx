@@ -14,6 +14,7 @@ import DataTable from "react-data-table-component";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import SortIcon from "@mui/icons-material/ArrowDownward";
+import MageModal from "../../components/MageModal";
 
 const MageList = () => {
 	const dispatch = useDispatch();
@@ -49,6 +50,7 @@ const MageList = () => {
 			<div className="mageContainer">
 				{content.map((mage) => (
 					<Card className="mageCard">
+						<MageModal />
 						<CardActionArea>
 							<CardMedia
 								component="img"
@@ -68,14 +70,14 @@ const MageList = () => {
 									variant="body2"
 									color="text.secondary"
 								>
-									Mage info here...
+									Populate some mage info here...
 								</Typography>
 							</CardContent>
 						</CardActionArea>
 						<CardActions>
-							<Button size="small" color="primary">
-								Choose mage
-							</Button>
+							{/* <Button size="small" color="primary">
+								View mage details
+							</Button> */}
 						</CardActions>
 					</Card>
 					// <div className="indvMage">{mage.name} </div>

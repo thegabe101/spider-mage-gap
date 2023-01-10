@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const MAGE_URL = `api2/mages`;
+const MAGE_URL = `api3/mages`;
 
 const initialState = []
 

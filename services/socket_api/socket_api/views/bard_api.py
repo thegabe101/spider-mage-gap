@@ -4,6 +4,7 @@ import logging
 api = Blueprint("collections_api", __name__)
 log = logging.getLogger()
 
-@api.route('/')
+@api.route('/mages')
 def index():
-    return "it works"
+    mages = [{"id": "dfa", "key":"dfa", "name":"dfaa"}]
+    return jsonify(mages)

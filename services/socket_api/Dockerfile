@@ -13,4 +13,5 @@ RUN pip install .
 COPY seed_data.py /usr/src/app/seed_data.py
 ENV FLASK_APP=
 ENV FLASK_DEBUG=1
-CMD gunicorn --workers 2 --timeout 300 --bind 0.0.0.0:8080 --access-logfile - wsgi:application --reload
+
+CMD gunicorn --workers 2 --timeout 300 --threads 5 --bind 0.0.0.0:8080 --access-logfile - wsgi:application --reload

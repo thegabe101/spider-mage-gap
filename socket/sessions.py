@@ -1,8 +1,3 @@
-from socket_api.app import create_app
-import os
-
-environment = os.getenv('BARD_ENV', 'dev')
-application = create_app(environment)
 from threading import Lock
 from flask import Flask, render_template, session, request, \
     copy_current_request_context
@@ -31,7 +26,7 @@ def background_thread():
                       {'data': 'Server generated event', 'count': count})
 
 
-@app.route('/route')
+@app.route('/')
 def index():
     return render_template('index.html', async_mode=socketio.async_mode)
 
@@ -119,8 +114,6 @@ def connect():
 def test_disconnect():
     print('Client disconnected', request.sid)
 
+
 if __name__ == '__main__':
-    host = application.config['FLASK_RUN_HOST']
-    port = application.config['FLASK_RUN_PORT']
-    debugging = application.config['DEBUG']
-    socketio.run(host=host, port=port, debug=debugging)
+    socketio.run(app).py

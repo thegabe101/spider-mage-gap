@@ -67,8 +67,8 @@ services:
       - "./services/battle_mage_api/api:/usr/src/app/api"
       - "./services/battle_mage_api/contrib:/usr/src/app/contrib"
       - app-volume:/usr/src/app/appdata
-#    links:
-#      - mongo
+    links:
+      - mongo
 ##
   socket_api:
     build: services/socket_api
@@ -87,18 +87,18 @@ services:
 #      - mongo
 
 
-#  ui:
-#    build:
-#      context: spider-redux
-#    image: battle_mage_ui
-#    ports:
-#      - 3000:3000
-#    volumes:
-#      - "./spider-redux/src:/app/src"
-#    environment:
-#      CHOKIDAR_USEPOLLING: "true"
-#    networks:
-#      mongo_network:
+  ui:
+    build:
+      context: spider-redux
+    image: battle_mage_ui
+    ports:
+      - 3000:3000
+    volumes:
+      - "./spider-redux/src:/app/src"
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    networks:
+      mongo_network:
 
 
 

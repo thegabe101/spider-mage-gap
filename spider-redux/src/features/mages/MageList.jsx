@@ -1,26 +1,64 @@
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAllMages, fetchMages } from "./magesSlice";
 // import PostsExcerpt from "./PostsExcerpt";
 import { useState, useEffect } from "react";
+import "../../styles/magelist.css";
+import { Typography } from "@mui/material";
+import { Button, CardActionArea, CardActions } from "@mui/material";
+import dwarfmageplaceholder from "../../assets/dwarfmageplaceholder.jpg";
 
 const MageList = () => {
-    const dispatch = useDispatch()
-    const mages = useSelector(selectAllMages);
-    useEffect(() => {    
-        if (mages === undefined || mages.length == 0) {
-            dispatch(fetchMages())
-        }
-    }, [])
-    let content = [];
-    if (mages.length != 0) {
-        content =mages
-        console.log(content)
-    }
+	const dispatch = useDispatch();
+	const mages = useSelector(selectAllMages);
+	useEffect(() => {
+		if (mages === undefined || mages.length == 0) {
+			dispatch(fetchMages());
+		}
+	}, []);
+	let content = [];
+	if (mages.length != 0) {
+		content = mages;
+		console.log(content);
+	}
 
-    return (
-        <div>
-            {content.map(mage => <div>{mage.name} </div>)}
-        </div>
-    )
-}
-export default MageList
+	return (
+		<div className="mageContainer">
+			{content.map((mage) => (
+				<Card className="mageCard">
+					<CardActionArea>
+						<CardMedia
+							component="img"
+							height="140"
+							image={dwarfmageplaceholder}
+							alt="green iguana"
+						/>
+						<CardContent>
+							<Typography
+								gutterBottom
+								variant="h5"
+								component="div"
+							>
+								{mage.name}
+							</Typography>
+							<Typography variant="body2" color="text.secondary">
+								Mage info here...
+							</Typography>
+						</CardContent>
+					</CardActionArea>
+					<CardActions>
+						<Button size="small" color="primary">
+							Choose mage
+						</Button>
+					</CardActions>
+				</Card>
+				// <div className="indvMage">{mage.name} </div>
+			))}
+		</div>
+	);
+};
+
+export default MageList;

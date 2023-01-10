@@ -1,8 +1,0 @@
-flask
-pymongo
-pytest
-boto3
-flask-cors
-gunicorn
-python-dotenv
-fantasynames

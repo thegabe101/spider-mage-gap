@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
 import Button from "@material-ui/core/Button";
+import "../styles/magemodal.css";
 
 function rand() {
 	return Math.round(Math.random() * 20) - 10;
@@ -36,22 +37,10 @@ function MageModal() {
 	const [modalData, setData] = useState();
 
 	const data = [
-		{
-			title: "Mage Details",
-			Info: "Mage info here",
-		},
-		{
-			title: "Mage Details",
-			Info: "Mage info here",
-		},
-		{
-			title: "Mage Details",
-			Info: "Mage info here",
-		},
-		{
-			title: "Mage Details",
-			Info: "Mage info here",
-		},
+		{ class: "warrior" },
+		{ class: "mage" },
+		{ class: "warlock" },
+		{ class: "priest" },
 	];
 	const CustomModal = () => {
 		return modalData ? (
@@ -63,13 +52,10 @@ function MageModal() {
 			>
 				<div style={modalStyle} className={classes.paper}>
 					<Typography variant="h6" id="modal-title">
-						{modalData.Info}
+						{modalData.class}
 					</Typography>
-					<Typography
-						variant="subtitle1"
-						id="simple-modal-description"
-					>
-						{modalData.title}
+					<Typography variant="h6" id="simple-modal-description">
+						Display mage data here
 					</Typography>
 					{/* <SimpleModal /> */}
 				</div>
@@ -77,29 +63,38 @@ function MageModal() {
 		) : null;
 	};
 
-	const handleOpen = (index) => {
+	const handleOpen = () => {
 		setOpen(true);
-		setData(data[index]);
+		setData(data);
 	};
 
 	const handleClose = () => {
 		setOpen(false);
 	};
+
 	const classes = useStyles();
 
 	return (
 		<div>
-			{data.map((d, index) => (
-				<div>
-					<Button
-						onClick={() => {
-							handleOpen(index);
-						}}
-					>
-						{d.title}
-					</Button>
-				</div>
-			))}
+			<div>
+				<Button
+					color="primary"
+					fullWidth="true"
+					onClick={() => {
+						handleOpen();
+					}}
+				>
+					{" "}
+					Select Mage
+					{data.map((e) => {
+						return (
+							<div>
+								<h1>{e[0]}</h1>
+							</div>
+						);
+					})}
+				</Button>
+			</div>
 			<CustomModal />
 		</div>
 	);

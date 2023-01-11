@@ -15,6 +15,7 @@ import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import SortIcon from "@mui/icons-material/ArrowDownward";
 import MageModal from "../../components/MageModal";
+import "../../styles/paperstyle.css";
 
 const MageList = () => {
 	const dispatch = useDispatch();
@@ -51,28 +52,27 @@ const MageList = () => {
 				{content.map((mage) => (
 					<Card className="mageCard">
 						<MageModal />
+						<CardContent>
+							<Typography
+								gutterBottom
+								variant="h5"
+								component="div"
+							>
+								{mage.name}
+							</Typography>
+							<Typography
+								variant="body2"
+								color="text.secondary"
+							></Typography>
+						</CardContent>
 						<CardActionArea>
 							<CardMedia
+								className="cardImage"
 								component="img"
 								height="140"
 								image={dwarfmageplaceholder}
 								alt="green iguana"
 							/>
-							<CardContent>
-								<Typography
-									gutterBottom
-									variant="h5"
-									component="div"
-								>
-									{mage.name}
-								</Typography>
-								<Typography
-									variant="body2"
-									color="text.secondary"
-								>
-									Populate some mage info here...
-								</Typography>
-							</CardContent>
 						</CardActionArea>
 						<CardActions>
 							{/* <Button size="small" color="primary">
@@ -87,7 +87,7 @@ const MageList = () => {
 				{/* {content.map(mage => <div>{mage.name} </div>)}
             <div style={{ height: 400, width: '100%' }}> */}
 
-				<Paper>
+				<Paper className="paperStyle">
 					<DataTable
 						title="Mages"
 						columns={columns}

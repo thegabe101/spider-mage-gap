@@ -47,7 +47,7 @@ services:
     # You can test multiple containers at a time, simply duplicate this section
     # and customize it for each container, and give it a unique IP in 'credentials_network'.
   api:
-#    build: .
+    build: .
     image: api_image
     container_name: api
     depends_on:
@@ -62,7 +62,7 @@ services:
       AWS_DEFAULT_REGION: "us-west-2"
       AWS_CONTAINER_CREDENTIALS_RELATIVE_URI: "/creds"
     volumes:
-      - "./seed_data.py:/usr/src/app/seed_data.py"
+#      - "./seed_data.py:/usr/src/app/seed_data.py"
       - "./api:/usr/src/app/api"
       - "./contrib:/usr/src/app/contrib"
       - app-volume:/usr/src/app/appdata

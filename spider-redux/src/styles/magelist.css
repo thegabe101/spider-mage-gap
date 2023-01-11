@@ -1,14 +1,21 @@
 .mageContainer {
-    padding-top: 10vh;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    padding-top: 15vh;
+    margin-bottom: 2vh;
     size: 100%;
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 3rem;
+    grid-template-columns: auto auto auto auto;
     overflow: scroll;
 }
 
 .mageCard {
     background-color: aliceblue;
-    height: min-content;
-    width: max-content;
+    height: auto;
+    width: auto;
 }
+
+/* .cardImage {
+    width:fit-content;
+} */

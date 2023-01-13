@@ -6,4 +6,11 @@ module.exports = (app) => {
         pathRewrite: { '^/api2': '' }
     })
     );
+    app.use(createProxyMiddleware('/keycloak', {
+        target: 'http://keycloak:3005',
+        changeOrigin: true,
+        pathRewrite: { '^/keycloak': '' }
+    })
+    );
+
 }

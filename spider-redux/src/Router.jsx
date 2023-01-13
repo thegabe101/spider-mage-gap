@@ -25,6 +25,7 @@ const Router = () => {
 		<>
 		{/* <Menu /> */}
         <BrowserRouter>
+        <Nav />
             {/* <Routes>
                 <Route exact path="/" component={HomePage} />
                 <PrivateRoute roles={['RealmAdmin']} path="/protected" element={ProtectedPage} />

@@ -1,9 +1,8 @@
-import Keycloak from "keycloak-js";
-const keycloak = new Keycloak({
- url: "/keycloak",
- realm: "daru-realm",
- clientId: "daru-client",
- sslRequired: "external"
-});
-
-export default keycloak;
+import Keycloak from 'keycloak-js'
+const keycloakConfig = {
+  url: '/keycloak', 
+  realm: 'daru-realm', 
+  clientId: 'daru-client'
+}
+const keycloak = new Keycloak(keycloakConfig);
+export default keycloak

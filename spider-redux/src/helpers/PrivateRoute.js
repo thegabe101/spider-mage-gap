@@ -1,16 +1,16 @@
 import  keycloak  from '../Keycloak'
 
 const PrivateRoute = ({ children }) => {
-    console.log("dfdfa")
+    console.log("dfdfa dfdf aaa ")
     const isLoggedIn = keycloak.authenticated;
 
-    keycloak.init({onLoad: 'login-required'}).then(authenticated => {
-        this.setState({ keycloak: keycloak, authenticated: authenticated })
-      })
-      .catch(() => {
-        console.log('The keycloak client could not be initiated');
+    // keycloak.init({onLoad: 'login-required'}).then(authenticated => {
+    //     this.setState({ keycloak: keycloak, authenticated: authenticated })
+    //   })
+    //   .catch(() => {
+    //     console.log('The keycloak client could not be initiated');
  
-    });
+    // });
 
 //  keycloak.init({onLoad: 'login-required'}).then(function (authenticated) {
 //         if (!authenticated) {
@@ -30,7 +30,8 @@ const PrivateRoute = ({ children }) => {
  
     // });
 
-    return isLoggedIn ? children : null;
+    // return isLoggedIn ? children : null;
+    return "dfa"
 };
 
 export default PrivateRoute;

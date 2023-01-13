@@ -1,0 +1,8 @@
+
+{
+    "realm" : "daru-realm",
+    "auth-server-url" : "/keycloak",
+    "ssl-required" : "external",
+    "resource" : "daru-client",
+    "public-client" : true
+  }

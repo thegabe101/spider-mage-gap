@@ -21,14 +21,14 @@ const PrivateRoute = ({ children }) => {
 
 //     });
 
-    // keycloak.init({ 'onLoad': 'check-sso' })
-    //     .then(() => {
-    //     console.log('The keycloak client wa be initiated');
-    // })
-    // .catch(() => {
-    //     console.log('The keycloak client could not be initiated');
+    keycloak.init({ 'onLoad': 'check-sso' })
+        .then(() => {
+        console.log('The keycloak client wa be initiated');
+    })
+    .catch(() => {
+        console.log('The keycloak client could not be initiated');
  
-    // });
+    });
 
     // return isLoggedIn ? children : null;
     return "dfa"
